@@ -22,6 +22,7 @@ const app = new Vue({
     el: '#root',
     data: {		
 		todos,
+		testoInserito: ''
     },
 
     methods: {   
@@ -31,9 +32,22 @@ const app = new Vue({
 			} else {
 				todo.done = true
 			}
-
 			// console.log(todo)
-		},   
-    }
-})
+		},
+		
+		aggiungiTask() {
 
+			this.testoInserito = this.testoInserito.trim()
+			if(this.testoInserito === '') {
+				return
+			} else {
+				this.todos.push({
+					text: this.testoInserito,
+					done: false
+				})
+			}
+
+			this.testoInserito = ''
+		}
+    }	
+})

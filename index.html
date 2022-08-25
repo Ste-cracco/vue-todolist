@@ -13,8 +13,9 @@
 
   <main id="root">
     <div class="container">
-      <input type="text">
-      <input type="button" value="Aggiungi">   
+      <input type="text" v-model = "testoInserito">
+      <input type="button" value="Aggiungi" 
+        @click = "aggiungiTask()">   
     </div>
 
     <div class="container">
