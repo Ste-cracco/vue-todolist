@@ -24,7 +24,16 @@ const app = new Vue({
 		todos,
     },
 
-    methods: {      
+    methods: {   
+		toggleDone(todo) {
+			if(todo.done === true) {
+				todo.done = false
+			} else {
+				todo.done = true
+			}
+
+			// console.log(todo)
+		},   
     }
 })
 
