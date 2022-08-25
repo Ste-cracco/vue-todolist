@@ -15,15 +15,19 @@
     <div class="container">
       <input type="text" v-model = "testoInserito">
       <input type="button" value="Aggiungi" 
-        @click = "aggiungiTask()">   
+        @click = "aggiungiTask()"
+        
+        @keyup.enter = "aggiungiTask()" >   
     </div>
 
     <div class="container">
       <h2>Lista delle cose da fare:</h2>
       <ul>
         <li v-for = "todo in todos"
-            :class = "(todo.done === true) ? 'active' : '' ">
-            {{ todo.text }}
+            :class = "(todo.done === true) ? 'active' : '' "
+            @click = "toggleDone(todo)">
+            {{ todo.text }}                     
+            <!-- Icona <li> -->
             <i @click = "toggleDone(todo)" 
               class="fa-solid fa-xmark">
             </i>          
